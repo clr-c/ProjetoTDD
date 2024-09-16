@@ -18,16 +18,19 @@ O projeto está dividido em duas pastas principais:
 2. **Program.Tests (`VerificacaoAlunoTests.cs`)**
    - **Testes:**
      - `VerificarValorNegativo_FrequenciaNegativa_RetornaException()`
+     - `VerificarValorNegativo_NotaFinalNegativa_RetornaException()`
+     - `VerificarValorNegativo_NotaEspecialNegativa_RetornaException()`
      - `DeterminarAprovacao_FrequenciaBaixa_RetornaFalse()`
      - `DeterminarAprovacao_NotaFinalBaixa_RetornaFalse()`
      - `DeterminarAprovacao_MediaFinalBaixa_RetornaFalse()`
+     - `DeterminarAprovacao_MediaFinalZero_RetornaFalse()`
      - `DeterminarAprovacao_TodasAsCondicoesAprovadas_RetornaTrue()`
 
 ## Executando o Projeto
 
 Para executar o projeto, siga estas etapas:
    ```sh
-   git clone <URL do repositório>
+   git clone <https://github.com/clr-c/ProjetoTDD.git>
    cd ProjetoTDD
    dotnet run --project Program/Program.csproj
    ```
@@ -36,6 +39,6 @@ Para executar o projeto, siga estas etapas:
 
 Para executar os testes, siga estas etapas:
    ```sh
-   cd Program.Tests
+   cd ProjetoTDD
    dotnet test
    ```
