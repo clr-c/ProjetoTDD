@@ -8,14 +8,15 @@ Este projeto é um programa de aprovação acadêmica, inclui uma verificação 
 
 O projeto está dividido em duas pastas principais:
 
-1. **Programa (`Program.cs`)**
-   - **Métodos Principais:**
+1. **Program (`Program.cs` && `MetodosParaAprovacaoAcademica.cs`)**
+   - **Métodos:**
+     - `Main()`
      - `VerificarValorNegativo(int frequencia, double notaFinal, double notaEspecial)`
      - `DeterminarAprovacao(int frequencia, double notaFinal, double mediaFinal)`
-     - `ReceberValores()`
+     - `RecebereCalcularValores()`
 
-2. **Testes (`Program.Tests`)**
-   - **Testes Principais:**
+2. **Program.Tests (`VerificacaoAlunoTests.cs`)**
+   - **Testes:**
      - `VerificarValorNegativo_FrequenciaNegativa_RetornaException()`
      - `DeterminarAprovacao_FrequenciaBaixa_RetornaFalse()`
      - `DeterminarAprovacao_NotaFinalBaixa_RetornaFalse()`
@@ -25,10 +26,16 @@ O projeto está dividido em duas pastas principais:
 ## Executando o Projeto
 
 Para executar o projeto, siga estas etapas:
-
-1. **Clone o repositório:**
-
    ```sh
    git clone <URL do repositório>
    cd ProjetoTDD
    dotnet run --project Program/Program.csproj
+   ```
+
+## Executando os Testes
+
+Para executar os testes, siga estas etapas:
+   ```sh
+   cd Program.Tests
+   dotnet test
+   ```
