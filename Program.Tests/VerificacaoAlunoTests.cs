@@ -62,7 +62,22 @@ namespace ProjetoTDD.Program.Tests
             //Arrange
             int frequencia = 80;
             double notaFinal = 70;
-            double notaEspecial = 20;
+            double notaEspecial = 50;
+
+            //Act
+            bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, notaEspecial);
+
+            //Assert
+            Assert.False(resultado);
+        }
+
+        [Fact]
+        public void DeterminarAprovacao_NotaEspecialZero_RetornaFalse()
+        {
+            //Arrange
+            int frequencia = 80;
+            double notaFinal = 90;
+            double notaEspecial = 0;
 
             //Act
             bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, notaEspecial);
@@ -77,7 +92,7 @@ namespace ProjetoTDD.Program.Tests
             //Arrange
             int frequencia = 80;
             double notaFinal = 98;
-            double notaEspecial = 70;
+            double notaEspecial = 100;
 
             //Act
             bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, notaEspecial);
