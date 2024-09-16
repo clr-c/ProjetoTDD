@@ -32,10 +32,10 @@ namespace ProjetoTDD.Program.Tests
             //Arrange
             int frequencia = 70;
             double notaFinal = 80;
-            double mediaFinal = (notaFinal + 60) / 2;
+            double notaEspecial = 70;
 
             //Act
-            bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, mediaFinal);
+            bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, notaEspecial);
 
             //Assert
             Assert.False(resultado);
@@ -47,10 +47,10 @@ namespace ProjetoTDD.Program.Tests
             //Arrange
             int frequencia = 80;
             double notaFinal = 50;
-            double mediaFinal = (notaFinal + 60) / 2;
+            double notaEspecial = 65;
 
             //Act
-            bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, mediaFinal);
+            bool resultado = _verificacaoAluno.DeterminarAprovacao(frequencia, notaFinal, notaEspecial);
 
             //Assert
             Assert.False(resultado);
