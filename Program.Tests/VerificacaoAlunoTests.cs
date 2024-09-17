@@ -23,7 +23,33 @@ namespace ProjetoTDD.Program.Tests
 
             //Act & Assert
             var ex = Assert.Throws<ValorNegativoException>(() => _verificacaoAluno.VerificarValorNegativo(frequencia, notaFinal, notaEspecial));
-            Assert.Equal("ERRO: O valor de frequencia é negativo. Valor informado: -1.", ex.Message);
+            Assert.Equal($"ERRO: O valor de frequencia é negativo. Valor informado: {frequencia}.", ex.Message);
+        }
+
+        [Fact]
+        public void VerificarValorNegativo_NotaFinalNegativa_RetornaException()
+        {
+            //Arrange
+            int frequencia = 100;
+            double notaFinal = -20;
+            double notaEspecial = 75;
+
+            //Act & Assert
+            var ex = Assert.Throws<ValorNegativoException>(() => _verificacaoAluno.VerificarValorNegativo(frequencia, notaFinal, notaEspecial));
+            Assert.Equal($"ERRO: O valor de notaFinal é negativo. Valor informado: {notaFinal}.", ex.Message);
+        }
+
+        [Fact]
+        public void VerificarValorNegativo_NotaEspecialNegativa_RetornaException()
+        {
+            //Arrange
+            int frequencia = 95;
+            double notaFinal = 75;
+            double notaEspecial = -60;
+
+            //Act & Assert
+            var ex = Assert.Throws<ValorNegativoException>(() => _verificacaoAluno.VerificarValorNegativo(frequencia, notaFinal, notaEspecial));
+            Assert.Equal($"ERRO: O valor de notaEspecial é negativo. Valor informado: {notaEspecial}.", ex.Message);
         }
 
         [Fact]
